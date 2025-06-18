@@ -68,9 +68,7 @@ kehidupan_saat_ini() {
 # Fungsi untuk opsi 2: Menampilkan daftar file dan direktori
 daftar_direktori() {
     tampilkan_judul_aksi "Daftar Direktori Saat Ini"
-    # '$(pwd)' adalah "command substitution". Perintah 'pwd' (Print Working Directory)
-    # akan dieksekusi terlebih dahulu, dan hasilnya (path direktori saat ini) akan
-    # disisipkan ke dalam string echo.
+    # '$(pwd)' adalah "command substitution". Perintah 'pwd' (Print Working Directory) akan dieksekusi terlebih dahulu, dan hasilnya (path direktori saat ini) akan disisipkan ke dalam string echo.
     printf "${PUTIH}Isi dari direktori: ${KUNING}$(pwd)${NC}\n\n"
     # 'ls -lhA' adalah perintah untuk menampilkan daftar isi direktori.
     # -l : long format (menampilkan detail lengkap).
@@ -187,11 +185,10 @@ detail_os() {
 
 # Fungsi untuk opsi 5: Menampilkan Waktu Instalasi OS
 waktu_install_os() {
-    tampilkan_judul_aksi "Waktu Instalasi OS"
+    tampilkan_judul_aksi "Waktu Instalasi OS (Berdasarkan Waktu Pembuatan Filesystem)"
     
     # menggunakan metode pengecekan Waktu Pembuatan Filesystem
-    # Metode ini memeriksa kapan partisi root ('/') diformat, yang biasanya
-    # terjadi tepat sebelum OS diinstal.
+    # Metode ini memeriksa kapan partisi root ('/') diformat, yang biasanya terjadi tepat sebelum OS diinstal.
     echo -e "${KUNING}Mencari waktu instalasi pertama kali${NC}\n"
     # 'df /' mencari partisi root, 'awk' mengambil namanya (misal: /dev/sda1)
     ROOT_DEVICE=$(df / | awk 'NR==2{print $1}')
