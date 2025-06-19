@@ -255,7 +255,9 @@ while true; do
             ;;
         7)
             clear
+            draw_line
             echo -e "\n${HIJAU}Terima kasih telah menggunakan Acumalaka App. Gud Bai :v${NC}\n"
+            draw_line
             exit 0
             ;;
         *)
