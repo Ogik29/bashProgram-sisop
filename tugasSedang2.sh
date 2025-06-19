@@ -110,7 +110,7 @@ info_jaringan() {
     printf "${CYAN}%-15s${NC} : %s\n" "Netmask" "${IP_LOKAL:-N/A}/${NETMASK_CIDR:-N/A}"
     printf "${CYAN}%-15s${NC} : %s\n\n" "DNS Server(s)" "${DNS_SERVER:-N/A}"
     
-    # Cek koneksi internet dengan mengirim satu paket ping ke server DNS Google.
+    # cek koneksi internet dengan mengirim satu paket ping ke server DNS Google.
     printf "${CYAN}Status Koneksi ke Internet:${NC}\n"
     # '-c 1' kirim 1 paket, '-W 2' tunggu balasan maks 2 detik.
     # '&> /dev/null' sembunyikan semua output dari perintah ping.
@@ -127,7 +127,7 @@ info_jaringan() {
     echo ""
     
     printf "${CYAN}Lokasi IP (berdasarkan IP Publik):${NC}\n"
-    # Cek apakah perintah 'curl' terinstall (install curl terlebih dahulu)
+    # cek apakah perintah 'curl' terinstall (install curl terlebih dahulu)
     if command -v curl &> /dev/null; then
         # Menggunakan curl untuk meminta data lokasi ke ipinfo.io secara terpisah.
         # '-s' untuk silent mode (tidak menampilkan progress bar).
