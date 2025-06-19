@@ -16,10 +16,6 @@ NC='\033[0m'
 BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
 
-# ==============================================================================
-# Fungsi Tampilan (UI Helpers)
-# ==============================================================================
-
 # Fungsi untuk menampilkan garis pemisah
 draw_line() {
     # Perintah ini membuat sebaris spasi kosong selebar terminal,
